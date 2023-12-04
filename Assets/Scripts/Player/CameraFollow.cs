@@ -23,6 +23,7 @@ namespace CtrlJam.Player
 
 		private void Update()
 		{
+			if (!Target) return;
 			var newPosition = Target.position;
 
 			newPosition.z = -10;
