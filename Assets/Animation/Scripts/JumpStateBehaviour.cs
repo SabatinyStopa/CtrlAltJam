@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class JumpStateBehaviour : StateMachineBehaviour
 {
@@ -11,10 +9,13 @@ public class JumpStateBehaviour : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+
         if (animator.GetBool("JumpUp") == true)
         {
             animator.SetBool("JumpUp", false);
             audioSource = animator.transform.GetComponent<AudioSource>();
+
+            if (!audioSource) return;
             audioSource.clip = audioJump;
             audioSource.Play();
         }

@@ -12,6 +12,7 @@ public class PlaySoundBehaviour : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         audioSource = animator.transform.GetComponent<AudioSource>();
+        if (!audioSource) return;
         audioSource.clip = audioSound;
         audioSource.loop = loop;
         audioSource.Play();
@@ -26,6 +27,7 @@ public class PlaySoundBehaviour : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (!audioSource) return;
         audioSource.Stop();
         audioSource.loop = false;
     }

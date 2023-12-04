@@ -7,7 +7,7 @@ namespace CtrlJam.Player
 {
     public class LayerController : MonoBehaviour
     {
-        [SerializeField] private MeshRenderer meshRenderer;
+        [SerializeField] private SkinnedMeshRenderer meshRenderer;
         [SerializeField] private Color mainColor = Color.white;
         [SerializeField] private Color firstColor = Color.blue;
         [SerializeField] private Color secondColor = Color.red;
@@ -15,6 +15,14 @@ namespace CtrlJam.Player
         private ObjectLayer currentLayer;
         private float changingColorTime = 0.05f;
         private bool changingColor = false;
+
+        private void Start()
+        {
+            meshRenderer.sharedMaterial.SetFloat("_Fill", -1f);
+            meshRenderer.sharedMaterial.SetColor("_Color", mainColor);
+            meshRenderer.sharedMaterial.SetColor("_TargetColor", mainColor);
+            currentLayer = ObjectLayer.main;
+        }
 
         private void Update()
         {
@@ -25,17 +33,17 @@ namespace CtrlJam.Player
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                currentLayer = ObjectLayer.third;
+                currentLayer = ObjectLayer.first;
                 targetColor = firstColor;
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                currentLayer = ObjectLayer.first;
+                currentLayer = ObjectLayer.second;
                 targetColor = secondColor;
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                currentLayer = ObjectLayer.second;
+                currentLayer = ObjectLayer.third;
                 targetColor = thirdColor;
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4))

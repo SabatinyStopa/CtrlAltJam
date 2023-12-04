@@ -13,9 +13,10 @@ namespace CtrlJam.Player
 		[SerializeField] private LayerMask whatIsGround;
 		[SerializeField] private Transform groundCheck;
 		[SerializeField] private Transform wallCheck;
+		[SerializeField] private Animator animator;
 
 		const float GROUNDED_RADIUS = .2f;
-		private bool isgrounded;
+		[SerializeField]private bool isgrounded;
 		private Rigidbody body;
 		private bool facingRight = true;
 		private Vector3 velocity = Vector3.zero;
@@ -34,7 +35,6 @@ namespace CtrlJam.Player
 		public bool invincible = false;
 		private bool canMove = true;
 
-		private Animator animator;
 		public ParticleSystem particleJumpUp;
 		public ParticleSystem particleJumpDown;
 
@@ -54,7 +54,6 @@ namespace CtrlJam.Player
 		private void Awake()
 		{
 			body = GetComponent<Rigidbody>();
-			animator = GetComponent<Animator>();
 
 			if (OnFallEvent == null)
 				OnFallEvent = new UnityEvent();
@@ -232,9 +231,7 @@ namespace CtrlJam.Player
 		private void Flip()
 		{
 			facingRight = !facingRight;
-			Vector3 theScale = transform.localScale;
-			theScale.x *= -1;
-			transform.localScale = theScale;
+			transform.rotation = facingRight ? Quaternion.identity : Quaternion.Euler(new Vector3(0, 180, 0));
 		}
 
 		public void ApplyDamage(float damage, Vector3 position)
