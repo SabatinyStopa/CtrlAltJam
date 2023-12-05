@@ -13,7 +13,7 @@ namespace CtrlJam.Player
         [SerializeField] private Color secondColor = Color.red;
         [SerializeField] private Color thirdColor = Color.green;
         private ObjectLayer currentLayer;
-        private float changingColorTime = 0.05f;
+        private float changingColorTime = 0.01f;
         private bool changingColor = false;
 
         private void Start()
