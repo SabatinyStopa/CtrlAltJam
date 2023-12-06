@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_FillShader
+  m_Name: PlayerFillShader
   m_Shader: {fileID: -6465566751694194690, guid: fbac660548de2bf4e9a16ca4effcb6b7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -29,9 +29,9 @@ Material:
     - _BUILTIN_QueueOffset: 0
     - _Fill: -1
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _CurrentColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TargetColor: {r: 0, g: 0, b: 1, a: 1}
+    - _TargetColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5390773957915237454
 MonoBehaviour:
