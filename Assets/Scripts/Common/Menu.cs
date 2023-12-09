@@ -1,5 +1,3 @@
-using Microsoft.Unity.VisualStudio.Editor;
-using OpenCover.Framework.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
