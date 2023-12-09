@@ -150,9 +150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 5750929123235716081}
   mainColor: {r: 1, g: 1, b: 1, a: 1}
-  firstColor: {r: 0, g: 0, b: 1, a: 1}
-  secondColor: {r: 1, g: 0, b: 0, a: 1}
-  thirdColor: {r: 0, g: 1, b: 0, a: 1}
+  firstColor: {r: 1, g: 0, b: 0.7019608, a: 1}
+  secondColor: {r: 0.011764706, g: 0, b: 1, a: 1}
+  thirdColor: {r: 0.7019608, g: 0, b: 1, a: 1}
 --- !u!1001 &4637164091058497428
 PrefabInstance:
   m_ObjectHideFlags: 0

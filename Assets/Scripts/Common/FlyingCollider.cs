@@ -1,4 +1,5 @@
 using System.Collections;
+using CtrlJam.Player;
 using UnityEngine;
 
 namespace CtrlJam.Common
@@ -20,8 +21,9 @@ namespace CtrlJam.Common
             {
                 player.useGravity = true;
                 player.AddForce(new Vector2(0f, 500f));
-                
+
                 if (movingPlayer != null) StopCoroutine(movingPlayer);
+                player.GetComponent<PlayerMovement>().BeingAppliedExternalForces = false;
                 movingPlayer = null;
             }
         }
@@ -30,7 +32,6 @@ namespace CtrlJam.Common
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("Trrigger");
                 if (movingPlayer != null) StopCoroutine(movingPlayer);
                 movingPlayer = StartCoroutine(MovePlayer());
             }
@@ -41,6 +42,7 @@ namespace CtrlJam.Common
             if (other.CompareTag("Player"))
             {
                 player.useGravity = true;
+                player.GetComponent<PlayerMovement>().BeingAppliedExternalForces = false;
                 if (movingPlayer != null) StopCoroutine(movingPlayer);
                 movingPlayer = null;
             }
@@ -49,6 +51,7 @@ namespace CtrlJam.Common
         private IEnumerator MovePlayer()
         {
             player.useGravity = false;
+            player.GetComponent<PlayerMovement>().BeingAppliedExternalForces = true;
 
             while (Mathf.Abs(player.transform.position.y - flyingPoint.position.y) > 1f)
             {

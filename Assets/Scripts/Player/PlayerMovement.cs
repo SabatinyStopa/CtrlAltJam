@@ -14,6 +14,9 @@ namespace CtrlJam.Player
 
 		private bool isGrounded;
 		private float horizontalMoviment;
+		private bool beingAppliedExternalForces = false;
+
+		public bool BeingAppliedExternalForces { get => beingAppliedExternalForces; set => beingAppliedExternalForces = value; }
 
 		private void Update()
 		{
@@ -33,12 +36,13 @@ namespace CtrlJam.Player
 			}
 		}
 
-        private void FixedUpdate()
-        {
-			body.AddForce(Vector3.down * speedGravity, ForceMode.Acceleration);
-            body.velocity = new Vector3(horizontalMoviment * Time.fixedDeltaTime * speed, body.velocity.y, 0);
-        }
+		private void FixedUpdate()
+		{
+			if (!BeingAppliedExternalForces) body.AddForce(Vector3.down * speedGravity, ForceMode.Acceleration);
 
-        private void Jump() => body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+			body.velocity = new Vector3(horizontalMoviment * Time.fixedDeltaTime * speed, body.velocity.y, 0);
+		}
+
+		private void Jump() => body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 	}
 }

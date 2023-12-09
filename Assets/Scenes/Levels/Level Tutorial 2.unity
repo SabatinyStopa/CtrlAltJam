@@ -240,7 +240,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357481814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -292,7 +292,7 @@ Transform:
   m_GameObject: {fileID: 357481814}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.94, y: 0.3357, z: 0}
+  m_LocalPosition: {x: 20.24, y: 0.3357, z: 0}
   m_LocalScale: {x: 1.8740785, y: 7.4825497, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51d6987541ba444aaa608420f49a3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 1
+  sceneIndex: 3
 --- !u!1001 &416278867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -329,7 +329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1064686453605528076, guid: db697cb0ee235ae4f95762cda6b55654, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.12
+      value: 24.24
       objectReference: {fileID: 0}
     - target: {fileID: 1064686453605528076, guid: db697cb0ee235ae4f95762cda6b55654, type: 3}
       propertyPath: m_LocalPosition.z
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pule usando o espa\xE7o"
+  m_text: "Pule usando o \"espa\xE7o\""
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1090,6 +1090,14 @@ PrefabInstance:
     - target: {fileID: 5766843445483427032, guid: 5359d77183533e040a94aeeda37765c9, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819152713387668067, guid: 5359d77183533e040a94aeeda37765c9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 14.745299
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819152713387668067, guid: 5359d77183533e040a94aeeda37765c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.6575
       objectReference: {fileID: 0}
     - target: {fileID: 6325035165635842122, guid: 5359d77183533e040a94aeeda37765c9, type: 3}
       propertyPath: m_LocalPosition.x
