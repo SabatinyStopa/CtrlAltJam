@@ -14,16 +14,16 @@ namespace CtrlJam.Player
 		[SerializeField] private Transform groundCheck;
 		[SerializeField] private Transform wallCheck;
 		[SerializeField] private Animator animator;
+		[SerializeField] private float limitFallSpeed = 25f;
+		[SerializeField] private float dashForce = 25f;
 
 		const float GROUNDED_RADIUS = .2f;
 		[SerializeField]private bool isgrounded;
 		private Rigidbody body;
 		private bool facingRight = true;
 		private Vector3 velocity = Vector3.zero;
-		private float limitFallSpeed = 25f;
 
 		public bool canDoubleJump = true;
-		[SerializeField] private float dashForce = 25f;
 		private bool canDash = true;
 		private bool isDashing = false;
 		private bool isWall = false;
