@@ -1,5 +1,4 @@
 using System.Collections;
-using CtrlJam.Player;
 using UnityEngine;
 
 namespace CtrlJam.Common
@@ -9,14 +8,9 @@ namespace CtrlJam.Common
         [SerializeField] private Transform flyingPoint;
         [SerializeField] private float upVelocity = 10f;
         private Rigidbody player;
-        private PlayerMovement playerMovement;
         private Coroutine movingPlayer;
 
-        private void Start()
-        {
-            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
-            playerMovement = player.GetComponent<PlayerMovement>();
-        }
+        private void Start() => player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
 
         private void Update()
         {
@@ -55,7 +49,6 @@ namespace CtrlJam.Common
         private IEnumerator MovePlayer()
         {
             player.useGravity = false;
-            playerMovement.OnFall();
 
             while (Mathf.Abs(player.transform.position.y - flyingPoint.position.y) > 1f)
             {
